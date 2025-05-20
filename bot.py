@@ -1,6 +1,13 @@
 import telebot
 
-bot = telebot.TeleBot('7286433121:AAHx6dO74hzXZv8-EXsDzdrMehHjWj3u358');
+def get_token():
+    with open(".env") as f:
+        for line in f:
+            if line.startswith("TG_TOKEN="):
+                return line.strip().split("=", 1)[1]
+                
+
+bot = telebot.TeleBot(get_token())
 name = ''
 surname = ''
 age = ''
