@@ -19,7 +19,7 @@ def get_name(message):
     global name
     name = message.text
     if name.count(" ") == 0:
-        bot.send_message(message.from_user.id, 'Какая у тебя фамилия?')
+        bot.send_message(message.from_user.id, f'Какая у тебя фамилия, {get_name}?')
         bot.register_next_step_handler(message, get_surname)
     else:
         bot.send_message(message.from_user.id, 'Одним словом, пожалуйста')
